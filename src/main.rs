@@ -1,4 +1,6 @@
+// do not use the standard library
 #![no_std]
+// do not use  normal entry point chain
 #![no_main]
 #![feature(custom_test_frameworks)]
 #![test_runner(blog_os::test_runner)]
@@ -9,7 +11,7 @@ use core::panic::PanicInfo;
 
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    println!("Hello World{}", "!");
+    println!("Hello World from Rust OS{}", "!");
 
     #[cfg(test)]
     test_main();
